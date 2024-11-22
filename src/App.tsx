@@ -2,21 +2,23 @@ import './App.css'
 import Header from "./components/Header.jsx";
 import Main from "./components/Main.jsx";
 import Footer from "./components/Footer.jsx";
+import {SWContext} from "./utils/context.ts";
 import {useState} from "react";
-import {navItems} from "./utils/constants.js";
-import {SWContext} from "./utils/context.js";
+import {characters, defaultHero} from "./utils/constants.ts";
+
 
 function App() {
-    const [page, setPage] = useState(navItems[0]);
+    const [heroName, setHeroName] = useState(characters[defaultHero].name);
 
     return (
-        <div>
-            <SWContext.Provider value={{page, changePage: setPage}}>
+        <>
+            <SWContext.Provider value={{heroName, changeName: setHeroName}}>
                 <Header/>
                 <Main/>
             </SWContext.Provider>
+
             <Footer/>
-        </div>
+        </>
     )
 }
 
