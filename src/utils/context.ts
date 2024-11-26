@@ -4,7 +4,7 @@ import {SWContextValue} from "./types";
 
 
 export const SWContext = createContext<SWContextValue>({
-    heroName: 'Luke Skywalker',
-    changeName:(name:string) => console.log(name),
+    hero: 'Luke Skywalker',
+    changeHero:(name:string) => console.log(name),
 });
 
