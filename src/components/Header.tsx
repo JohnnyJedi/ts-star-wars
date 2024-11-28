@@ -9,14 +9,14 @@ import {characters} from "../utils/constants.ts";
 
 const Header = () => {
 
-    const {hero} = useContext(SWContext)
+    const {hero,error} = useContext(SWContext)
 
 
 
     return (
         <header className="bg-grey-color rounded-t-2xl">
             <Navigation/>
-            <h1 className="text-center py-6 text-3xl">{characters[hero].name}</h1>
+            <h1 className="text-center py-6 text-3xl">{!error ? characters[hero].name : "Error!"}</h1>
         </header>
     );
 };

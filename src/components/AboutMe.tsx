@@ -10,7 +10,7 @@ const AboutMe = ({heroId}:AboutMeProps) => {
     const [hero, setHero] = useState<HeroInfo>();
 
     // const {heroId = defaultHero} = useParams();
-    // console.log(heroId);
+    console.log(heroId);
 
 
     useEffect(() => {
